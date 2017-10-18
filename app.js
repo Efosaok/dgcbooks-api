@@ -1,9 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const mongoClientConnect = require('mongo-client-connect');
-mongoClientConnect('mongodb://dgcbooks-api:DGC12345@ds121225.mlab.com:21225/dgcbooks-api').then(db => {});
+mongoClientConnect(process.env.DB_URL).then(db => {});
 
 const app = express();
 
